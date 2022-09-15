@@ -38,8 +38,10 @@
 ## 测试结果
 
 截止22/9/15，代码测试无误
-<!img, src="https://github.com/BB-Fly/FuDan-2022-DeepLearning/blob/main/img/img1.jpg", size=375>
 
+![Image](https://github.com/BB-Fly/FuDan-2022-DeepLearning/blob/main/img/img1.jpg)
+
+![Image](https://github.com/BB-Fly/FuDan-2022-DeepLearning/blob/main/img/img2.jpg)
 
 当k取值11时，取得了最高为96.4%的预测准确率
 
