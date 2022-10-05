@@ -23,7 +23,7 @@ x包含13个属性：CRIM、ZN、INDUS、CHAS、NOX、AGE、DIS、RAD、TAX、RT
     pre_vsl()   # 读取boaston数据集，分别以可视化的方式展示x的13个属性和y的关系
                 # 执行结果参考下图：
 
-![Image](https://github.com/BB-Fly/FuDan-2022-DeepLearning/blob/main/img/img1.jpg)
+![Image](https://github.com/BB-Fly/FuDan-2022-DeepLearning/blob/main/hw2/img/pre_vsl.jpg)
 
 ### 1. pre_work
 *数据集文件的读取与格式化模块*
@@ -40,7 +40,7 @@ x包含13个属性：CRIM、ZN、INDUS、CHAS、NOX、AGE、DIS、RAD、TAX、RT
     predict(x)                      # 使用训练好的模型，根据x预测y并返回
 
 对波士顿房价数据集的预测结果如图：
-![Image](https://github.com/BB-Fly/FuDan-2022-DeepLearning/blob/main/img/img1.jpg)
+![Image](https://github.com/BB-Fly/FuDan-2022-DeepLearning/blob/main/hw2/img/linear.jpg)
 
 ### 3. ridge
 *岭回归算法主体*
@@ -50,7 +50,7 @@ x包含13个属性：CRIM、ZN、INDUS、CHAS、NOX、AGE、DIS、RAD、TAX、RT
     predict(x)                      # 使用训练好的模型，根据x预测y并返回
 
 对波士顿房价数据集的预测结果如图：
-![Image](https://github.com/BB-Fly/FuDan-2022-DeepLearning/blob/main/img/img1.jpg)
+![Image](https://github.com/BB-Fly/FuDan-2022-DeepLearning/blob/main/hw2/img/ridge.jpg)
 
 ### 4. lasso
 *lasso回归算法主体*
@@ -60,7 +60,7 @@ x包含13个属性：CRIM、ZN、INDUS、CHAS、NOX、AGE、DIS、RAD、TAX、RT
     predict(x)                                                              # 使用训练好的模型，根据x预测y并返回
 
 对波士顿房价数据集的预测结果如图：
-![Image](https://github.com/BB-Fly/FuDan-2022-DeepLearning/blob/main/img/img1.jpg)
+![Image](https://github.com/BB-Fly/FuDan-2022-DeepLearning/blob/main/hw2/img/lasso.jpg)
 
 ### 5. test
 分别使用sklearn内置的3种回归算法，以及自编的上述3种回归算法，在波士顿房价数据集上进行预测。
@@ -71,9 +71,9 @@ x包含13个属性：CRIM、ZN、INDUS、CHAS、NOX、AGE、DIS、RAD、TAX、RT
 
 截止22/10/6，代码测试无误
 
-![Image](https://github.com/BB-Fly/FuDan-2022-DeepLearning/blob/main/img/img1.jpg)
+![Image](https://github.com/BB-Fly/FuDan-2022-DeepLearning/blob/main/hw2/img/test.jpg)
 
-![Image](https://github.com/BB-Fly/FuDan-2022-DeepLearning/blob/main/img/img2.jpg)
+![Image](https://github.com/BB-Fly/FuDan-2022-DeepLearning/blob/main/hw2/img/score.jpg)
 
 从折线图上来看，几种回归方法都有着不错的预测效果。
 从打分结果来看，针对此数据集，自编的Ridge回归效果最好；除了自编的Lasso回归以外，其他回归的分数相近。
