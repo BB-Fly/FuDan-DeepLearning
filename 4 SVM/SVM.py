@@ -1,7 +1,6 @@
 from random import randint
 import numpy as np
 import file_io
-from sklearn.svm import SVC
 
 
 class SVM:
@@ -160,8 +159,7 @@ if __name__ =="__main__":
         else:
             Y[i] = -1
 
-    #s = SVM(kernal=1)
-    s = SVC(kernel="linear")
+    s = SVM(kernal=1)
     s.fit(x_train, y)
     Y_predict = s.predict(x_test)
 
