@@ -1,6 +1,7 @@
 import torch
 from torch import nn
 import file_io
+import matplotlib.pyplot as plt
 
 
 class _mlpnn(nn.Module):
@@ -17,7 +18,7 @@ class _mlpnn(nn.Module):
         )
         self.linear3 = nn.Sequential(
             nn.Linear(64,10),
-            #nn.Sigmoid()
+            nn.Sigmoid()
         )
  
     def forward(self, x):
@@ -32,10 +33,15 @@ class MLPNN():
         self.epochs = epochs
 
 
-    def fit(self,X,Y):
+    def fit(self,X,Y,draw = False):
         self.net = _mlpnn(X.shape[1])
 
         trainer = torch.optim.SGD(self.net.parameters(), lr=0.05)
+
+        if draw:
+            plt.figure()
+            plt_x=[]
+            plt_y=[]
 
         for i in range(self.epochs):
             outX = self.net(X)
@@ -43,6 +49,13 @@ class MLPNN():
             loss = self.loss_func(outX, Y)
             loss.backward()
             trainer.step()
+            if draw:
+                plt_x.append(i)
+                plt_y.append(loss.item())
+
+        if draw:
+            plt.plot(plt_x,plt_y)
+            plt.show()
 
     
     def predict(self,X):
@@ -57,8 +70,9 @@ if __name__ == '__main__':
 
     train_x, train_y, test_x, test_y = file_io.mnist_tensor()
 
-    mlpnn = MLPNN(loss_func=nn.MultiLabelSoftMarginLoss())
-    mlpnn.fit(train_x,train_y)
+    #mlpnn = MLPNN(loss_func=nn.MultiLabelSoftMarginLoss())
+    mlpnn = MLPNN(epochs=200,loss_func=nn.CrossEntropyLoss())
+    mlpnn.fit(train_x,train_y,True)
 
     predict_y = mlpnn.predict(test_x)
 
