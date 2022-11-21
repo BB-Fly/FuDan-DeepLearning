@@ -71,7 +71,7 @@ if __name__ == '__main__':
     train_x, train_y, test_x, test_y = file_io.mnist_tensor()
 
     #mlpnn = MLPNN(loss_func=nn.MultiLabelSoftMarginLoss())
-    mlpnn = MLPNN(epochs=200,loss_func=nn.CrossEntropyLoss())
+    mlpnn = MLPNN(epochs=200,loss_func=nn.MSELoss())
     mlpnn.fit(train_x,train_y,True)
 
     predict_y = mlpnn.predict(test_x)

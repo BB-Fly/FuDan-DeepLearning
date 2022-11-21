@@ -1,5 +1,5 @@
 # MLPNN
-*基于MNIST数据集测试的MLPNN分类*
+*基于MNIST数据集测试的CNN分类*
 ---
 ## 数据集简介
 ### 1. 来源
@@ -22,12 +22,12 @@
 
 ```
 
-### 1. MLPNN
-*MLPNN的pytorch实现*
+### 1. CNN
+*CNN的pytorch实现*
 ``` python
-    '''how to use class:MLPNN '''
-    mlpnn = MLPNN(loss_func=nn.MultiLabelSoftMarginLoss())
-    mlpnn.fit(train_x,train_y)
+    '''how to use class:CNN '''
+    cnn = CNN(loss_func=nn.MultiLabelSoftMarginLoss())
+    cnn.fit(train_x,train_y)
 
     predict_y = mlpnn.predict(test_x)
 
